@@ -72,3 +72,25 @@ class QuizApp:
         self.show_question()
 
 
+    # Displays the current question and updates the 4 choice buttons.
+    def show_question(self):
+        if self.current_question_index < len(self.current_quiz['questions']):
+            question = self.current_quiz['questions'][self.current_question_index]
+            self.question_label.config(text=question['question'])
+            choices = list(question['choices'].keys())
+            for i in range(4):
+                self.choice_buttons[i].config(text=choices[i])
+        else:
+            self.show_score()
+
+
+    # Checks if the selected answer is correct.
+    def check_answer(self, choice_index):
+        question = self.current_quiz['questions'][self.current_question_index]
+        choices = list(question['choices'].keys())
+        answer = choices[choice_index]
+        if question['choices'][answer]:
+            self.score += 1
+        self.current_question_index += 1
+        self.show_question()
+
