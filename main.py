@@ -94,3 +94,10 @@ class QuizApp:
         self.current_question_index += 1
         self.show_question()
 
+
+    #Displays the total score using a message box.
+    def show_score(self):
+        messagebox.showinfo("Quiz Completed",
+                            f"Your score is {self.score} out of {len(self.current_quiz['questions'])}")
+        self.reset_quiz()
+
