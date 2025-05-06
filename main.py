@@ -101,3 +101,9 @@ class QuizApp:
                             f"Your score is {self.score} out of {len(self.current_quiz['questions'])}")
         self.reset_quiz()
 
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = QuizApp(root)
+    root.mainloop()
+
