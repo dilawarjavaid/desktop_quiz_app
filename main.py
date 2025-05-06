@@ -58,4 +58,17 @@ class QuizApp:
             btn.pack_forget()
 
 
+    # Hides the quiz selection buttons.
+    def start_quiz(self, quiz):
+        self.current_quiz = quiz
+        self.current_question_index = 0
+        self.score = 0
+        self.title_label.pack_forget()
+        for btn in self.quiz_buttons:
+            btn.pack_forget()
+        self.question_label.pack(pady=20)
+        for btn in self.choice_buttons:
+            btn.pack(pady=5)
+        self.show_question()
+
 
