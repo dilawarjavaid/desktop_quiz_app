@@ -9,5 +9,8 @@ class QuizApp:
         # Fetch Quiz Data from a Remote URL
         url = "https://raw.githubusercontent.com/arditsulceteaching/hosted_files/main/geo.json"
         response = requests.get(url)
+        self.question_label = tk.Label(...)
+        self.choice_buttons = []
+
 
 
