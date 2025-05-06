@@ -45,6 +45,17 @@ class QuizApp:
 
             self.reset_quiz()
 
+    #Resets the quiz state.
+    def reset_quiz(self):
+        self.current_quiz = None
+        self.current_question_index = 0
+        self.score = 0
+        self.title_label.config(text="Select a Quiz")
+        for btn in self.quiz_buttons:
+            btn.pack(pady=5)
+        self.question_label.pack_forget()
+        for btn in self.choice_buttons:
+            btn.pack_forget()
 
 
 
